@@ -6,9 +6,18 @@
 // None of the arrays will be empty, so you don't have to worry about that!
 
 function removeEveryOther(arr) {
-  //your code here
-  return arr;
+  let newArr = [];
+  for (let i = 0; i <= arr.length; i += 2) {
+    if(arr[i]) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
 }
 
 console.log(removeEveryOther(["Keep", "Remove", "Keep", "Remove", "Keep"]));
 //["Keep", "Keep", "Keep"];
+
+//SOLVED THIS by creating a NEW ARRAY
+
+//BUT SHOULD USE FILTER METHOD!!
