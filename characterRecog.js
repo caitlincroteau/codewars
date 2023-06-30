@@ -27,11 +27,18 @@ function correct(string) {
   return newString;
 }
 
-console.log(correct("L0ND0N"));
-console.log(correct("DUBL1N"));
-console.log(correct("51NGAP0RE"));
-console.log(correct("BUDAPE5T"));
-console.log(correct("PAR15"));
+//USE REPLACE function with REG-EX. -g flag means 'global' replacement. Otherwise it will only replace the first instance.
+function correct2(string) {
+  return string.replace(/5/g, "S").replace(/0/g, "O").replace(/1/, "I");
+}
+
+
+
+console.log(correct2("L0ND0N"));
+console.log(correct2("DUBL1N"));
+console.log(correct2("51NGAP0RE"));
+console.log(correct2("BUDAPE5T"));
+console.log(correct2("PAR15"));
 
 // "LONDON"
 // "DUBLIN"
