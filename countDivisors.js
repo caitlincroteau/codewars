@@ -10,28 +10,82 @@
 
 //THIS TOOK TOO LONG TO RUN IN CODEWARS :(
 //because it checks EVERY number in the list
-function getDivisorsCnt(n) {
+// function getDivisorsCnt(n) {
+//   let divisors = 0;
+//   //loop to up/including n
+//   for (let i = 1; i <= n; i++) {
+//     if (n % i === 0) {
+//       divisors++;
+//     }
+//   }
+
+//   return divisors;
+// }
+
+// function getDivisorsCnt2(n) {
+//   let divisors = 0;
+//   // let list = [];
+
+//   //test all candidates num from 2 to sqrt(n). when you find one, add num and n/num as divisors. Add 1 and n to list.
+
+//   //check if sqrt(n) % !== 0.
+//   if (!isSquare(n)) {
+//     for (let i = 1; i <= Math.sqrt(n); i++) {
+//       if (n % i === 0) {
+//         divisors += 2;
+//         // list.push(n / i);
+//         // list.push(i);
+//       }
+//     }
+//   } else {
+//     for (let i = 1; i <= Math.sqrt(n); i++) {
+//       if (n % i === 0) {
+//         divisors += 2;
+//         // list.push(n / i);
+//         // list.push(i);
+//       }
+//     }
+//     // list.pop();
+//     divisors -= 1;
+//   }
+
+//   // return `For the number ${n} are ${divisors} divisors and they are ${list}`;
+//   return divisors;
+// }
+
+//THIS PASSED ALL THE TESTS~~
+function getDivisorsCnt3(n) {
   let divisors = 0;
-  //loop to up/including n
-  for (let i = 1; i <= n; i++) {
+  for (let i = 1; i <= Math.sqrt(n); i++) {
     if (n % i === 0) {
-      divisors++;
+      divisors += 2;
     }
   }
-
+  if (Math.sqrt(n) % 1 === 0) {
+    divisors -= 1;
+  }
   return divisors;
 }
 
-// console.log(getDivisorsCnt(1));
-// console.log(getDivisorsCnt(4));
-// console.log(getDivisorsCnt(5));
-// console.log(getDivisorsCnt(12));
-// console.log(getDivisorsCnt(30));
-console.log(getDivisorsCnt(36));
+//Didn't need this function
+//check if number is perfect square
+function isSquare(n) {
+  return Math.sqrt(n) % 1 === 0;
+}
+
+// console.log(isSquare(36))
+// console.log(isSquare(15))
+
+console.log(getDivisorsCnt3(1));
+console.log(getDivisorsCnt3(4));
+console.log(getDivisorsCnt3(5));
+console.log(getDivisorsCnt3(12));
+console.log(getDivisorsCnt3(30));
+console.log(getDivisorsCnt3(36));
 //9
 //squrroot = 6
 
-// console.log(getDivisorsCnt(500000));
+console.log(getDivisorsCnt2(500000));
 
 // console.log(getDivisorsCnt2(1));
 // console.log(getDivisorsCnt2(4));
