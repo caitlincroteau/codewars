@@ -5,7 +5,6 @@
 // Note
 // consecutive strings : follow one after another without an interruption
 
-
 // strarr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], k = 2
 
 // Concatenate the consecutive strings of strarr by 2, we get:
@@ -17,7 +16,7 @@
 // abcdefuvwxyz ("      12)  concatenation of strarr[4] and strarr[5]
 
 // Two strings are the longest: "folingtrashy" and "abcdefuvwxyz".
-// The first that came is "folingtrashy" so 
+// The first that came is "folingtrashy" so
 // longest_consec(strarr, 2) should return "folingtrashy".
 
 // In the same way:
@@ -26,28 +25,26 @@
 function longestConsec(strarr, k) {
   let longestConcat = "";
 
-  
-    for (let i = 0; i < strarr.length - 1; i++) {
-      if (k === 1) {
-        let concat = strarr[i];
-        if (concat.length > longestConcat.length) {
-          longestConcat = concat;
-        }
-      } else {
-        let concat = ''
-        for(let j = 0; j < k; j++) {
-          concat += strarr[i + j]
-          
-        }
-        console.log(concat)
-      }
-    } 
-  
-
+  for (let i = 0; i <= strarr.length - k; i++) {
+    let concat = "";
+    for (let j = 0; j < k; j++) {
+      concat += strarr[i + j];
+    }
+    if (concat.length > longestConcat.length) {
+      longestConcat = concat;
+    }
+  }
   return longestConcat;
 }
 
-console.log(longestConsec(["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], 3))
+console.log(
+  longestConsec(["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], 2)
+);
 //folingtrashy
-console.log(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"], 3));
+console.log(
+  longestConsec(
+    ["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"],
+    1
+  )
+);
 //abigailtheta
