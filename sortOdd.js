@@ -16,7 +16,7 @@ function sortArray(array) {
       odds.push(array[i]);
     }
   }
-  odds.sort()
+  odds.sort((a, b) => a - b);
 
   for(let i = 0; i < indexes.length; i++) {
     array[indexes[i]] = odds[i];
@@ -25,7 +25,10 @@ function sortArray(array) {
   return array;
 }
 
-// console.log(sortArray([7, 1]));
-// console.log(sortArray([5, 8, 6, 3, 4]));
-// console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
+console.log(sortArray([7, 1]));
+console.log(sortArray([5, 8, 6, 3, 4]));
+console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
 console.log(sortArray([1, 11, 2, 8, 3, 4, 5]));
+
+
+// console.log([1, 11, 2, 8, 3, 4, 5].sort((a, b) => a - b));
