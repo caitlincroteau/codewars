@@ -6,10 +6,23 @@
 
 // Based on: http://oj.leetcode.com/problems/two-sum/
 
+function twoSum(numbers, target) {
+  for (let i = 0; i < numbers.length; i++) {
+    const value = target - numbers[i];
+    if (numbers.includes(value) && numbers.indexOf(value) !== i) {
+      return [i, numbers.indexOf(value)];
+    }
+  }
+  return [];
+}
 
-
-
-
+//value is in array 'numbers' but it is not at the same index it's being compared to ie you are not double counting the same index value. Eg [2,3,1], 4 does not count 2 twice.
 
 console.log(twoSum([1, 2, 3], 4));
-// returns [0, 2] or [2, 0]
+console.log(twoSum([1234, 5678, 9012], 14690));
+console.log(twoSum([2, 2, 3], 4));
+console.log(twoSum([2, 3, 1], 4));
+//[2, 0]
+//[1,2]
+//[0,1]
+//[1,2]
