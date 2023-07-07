@@ -15,7 +15,12 @@ function accum(s) {
   return result;
 }
 
-//try this while using map!
+//Here is an example of using map (taken from codewars page)
+
+// function accum(s) {
+// 	return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+// }
+
 console.log(accum("abcd"));
 console.log(accum("RqaEzty"));
 console.log(accum("cwAt"));
