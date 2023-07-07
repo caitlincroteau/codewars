@@ -12,33 +12,44 @@
 
 // Signature will always contain 3 numbers; n will always be a non-negative number; if n == 0, then return an empty array (except in C return NULL) and be ready for anything else which is not clearly specified ;)
 
-function tribonacci(signature,n){
-  const newArray = [];
-  let first;
-  let second;
-  let third;
-  
+function tribonacci(signature, n) {
+  if (n < 3) {
+    signature.length = n;
+    return signature;
+  }
 
+  let first = signature[0];
+  let second = signature[1];
+  let third = signature[2];
 
-  return newArray;
+  const result = [first, second, third];
 
+  let count = 4;
+  while (count <= n) {
+    const nextNum = first + second + third;
+    result.push(nextNum);
+    first = second;
+    second = third;
+    third = nextNum;
+    count++;
+  }
+  return result;
 }
 
-console.log(tribonacci([ [1,1,1], 10]));
-console.log(tribonacci([ [,0,0,1], 10]));
-console.log(tribonacci([ [0,1,1], 10]));
-console.log(tribonacci([ [1,0,0], 10]));
-console.log(tribonacci([ [0,0,0], 10]));
-console.log(tribonacci([ [1,2,3], 10]));
-console.log(tribonacci([ [3,2,1], 10]));
-console.log(tribonacci([ [1,1,1],  1]));
+console.log(tribonacci([1, 1, 1], 10));
+console.log(tribonacci([0, 0, 1], 10));
+console.log(tribonacci([0, 1, 1], 10));
+console.log(tribonacci([1, 0, 0], 10));
+console.log(tribonacci([0, 0, 0], 10));
+console.log(tribonacci([1, 2, 3], 10));
+console.log(tribonacci([3, 2, 1], 10));
+console.log(tribonacci([1, 1, 1], 1));
 
-
-// [1,1,1,3,5,9,17,31,57,105]  
-// [0,0,1,1,2,4,7,13,24,44]    
-// [0,1,1,2,4,7,13,24,44,81]   
-// [1,0,0,1,1,2,4,7,13,24]     
-// [0,0,0,0,0,0,0,0,0,0]       
+// [1,1,1,3,5,9,17,31,57,105]
+// [0,0,1,1,2,4,7,13,24,44]
+// [0,1,1,2,4,7,13,24,44,81]
+// [1,0,0,1,1,2,4,7,13,24]
+// [0,0,0,0,0,0,0,0,0,0]
 // [1,2,3,6,11,20,37,68,125,230]
 // [3,2,1,6,9,16,31,56,103,190]
 // [1]
