@@ -54,6 +54,10 @@ function high(x) {
   return highestWord;
 }
 
+//HOT TIP!!! Can you charCodeAt(0)-96 to find numberical value of all lower case letters!!
+//example "a".charCodeAt(0)-96 === 1
+// console.log("a".charCodeAt(0)-96)
+
 console.log(high("man i need a taxi up to ubud"));
 console.log(high("what time are we climbing up the volcano"));
 console.log(high("take me to semynak"));
