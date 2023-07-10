@@ -57,3 +57,16 @@ console.log(binaryCalculator("0101000001", "01111011"));
 // 0110111100
 // 444
 // 123+ 321
+
+//calculators for testing:
+//https://www.calculator.net/binary-calculator.html
+//https://www.rapidtables.com/convert/number/decimal-to-binary.html
+//https://www.wikihow.com/Add-Binary-Numbers
+
+//for further reading:
+//https://stackoverflow.com/questions/40353000/javascript-add-two-binary-numbers-returning-binary
+//https://stackoverflow.com/questions/11103487/how-to-convert-binary-representation-of-number-from-string-to-integer-number-in
+//https://stackoverflow.com/questions/4338315/inverting-a-binary-value-of-a-number
+//https://stackoverflow.com/questions/9939760/how-do-i-convert-an-integer-to-binary-in-javascript
+//https://stackoverflow.com/questions/1542128/string-charcodeat-undefined
+//https://stackoverflow.com/questions/14430633/how-to-convert-text-to-binary-code-in-javascript
