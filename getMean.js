@@ -8,8 +8,50 @@
 
 // getMean([1,3,2,4], 2, 8) should return -1 because 8 is higher than the array's length.
 
-function getMean(arr, x, y) {}
+function getMean(arr, x, y) {
+  if (x <= 1 || y <= 1 || x > arr.length || y > arr.length) {
+    return -1;
+  }
+
+  const mean1 = getFirstMean(x, arr);
+  const mean2 = getSecondMean(y, arr);
+  const totalMean = (mean1 + mean2) / 2;
+  //mean1 = index0 up to and including index of x
+  //mean2 = last index back y number of indexs
+
+  return `${mean1} ${mean2}`;
+  //return totalMean;
+}
+
+const getFirstMean = function (x, arr) {
+  let total = 0;
+  let divisor = 0;
+  const indexX = arr.indexOf(x);
+
+  for (let i = 0; i <= indexX; i++) {
+    total += arr[i];
+    divisor++;
+  }
+
+  return total / divisor;
+};
+
+const getSecondMean = function (y, arr) {
+  let total = 0;
+  let divisor = 0;
+
+  for (let i = arr.length - 1; i >= arr.length - y; i--) {
+    total += arr[i];
+    divisor++;
+  }
+
+  return total / divisor;
+};
 
 console.log(getMean([1, 3, 2, 4], 2, 3));
+//2.5
+console.log(getMean([1, 3, 2], 2, 2));
+//2.25
 console.log(getMean([1, 3, 2, 4], 1, 2));
+//-1
 console.log(getMean([1, 3, 2, 4], 2, 8));
